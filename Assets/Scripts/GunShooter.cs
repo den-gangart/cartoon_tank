@@ -17,7 +17,7 @@ public class GunShooter : MonoBehaviour
             return;
         }
 
-        GameObject bulletObject = Instantiate(_bulletPrefab, _shootPoint.transform.position, transform.rotation);
+       Instantiate(_bulletPrefab, _shootPoint.transform.position, transform.rotation);
         _isReady = false;
         StartCoroutine(Reolad());
     }

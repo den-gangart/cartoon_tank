@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float  _bulletSpeed = 50f;
     [SerializeField] private float _maxLiveTime = 5f;
+    [SerializeField] private GameObject _vfxPoint;
+    [SerializeField] private GameObject _explosionVFX;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Instantiate(_explosionVFX, _vfxPoint.transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
