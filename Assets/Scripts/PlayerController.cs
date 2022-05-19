@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private TankMovement _tankMovement;
+    [SerializeField] private GunShooter _gunShooter;
     [SerializeField] private Camera _camera;
 
     private Quaternion _cameraRotation => _camera.transform.rotation;
@@ -14,6 +15,14 @@ public class PlayerController : MonoBehaviour
         if(_tankMovement == null)
         {
             Debug.LogError(GameErrorMessages.MISSING_TANK_MOVEMENT);
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            _gunShooter.TryShoot();
         }
     }
 
