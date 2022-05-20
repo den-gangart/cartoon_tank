@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 1938152940}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 2104311934}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1217,11 +1217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4571493643966056445, guid: bac432f6db80ada4fa645e78f83415a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000047173145
+      value: -0.0000000047173643
       objectReference: {fileID: 0}
     - target: {fileID: 4571493643966056445, guid: bac432f6db80ada4fa645e78f83415a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -3.916595e-10
+      value: 3.9213285e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4571493644211510398, guid: bac432f6db80ada4fa645e78f83415a2, type: 3}
       propertyPath: m_Follow
@@ -1233,11 +1233,11 @@ PrefabInstance:
       objectReference: {fileID: 33641981}
     - target: {fileID: 4571493645425459295, guid: bac432f6db80ada4fa645e78f83415a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000042793777
+      value: -0.0000000042793777
       objectReference: {fileID: 0}
     - target: {fileID: 4571493645425459295, guid: bac432f6db80ada4fa645e78f83415a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.366374e-10
+      value: 4.366374e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4571493645476121278, guid: bac432f6db80ada4fa645e78f83415a2, type: 3}
       propertyPath: m_Name

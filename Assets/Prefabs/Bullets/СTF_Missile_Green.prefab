@@ -102,7 +102,8 @@ MonoBehaviour:
   _bulletSpeed: 50
   _maxLiveTime: 3
   _vfxPoint: {fileID: 7118598090406582546}
-  _explosionVFX: {fileID: 100004, guid: 6e8c7c425e5bc374daf95a774767b1e3, type: 3}
+  _regularExplosionVFX: {fileID: 100004, guid: 6e8c7c425e5bc374daf95a774767b1e3, type: 3}
+  _groundExplosionVFX: {fileID: 100008, guid: 337943813ac55274db17d9c4dfcaf5ea, type: 3}
 --- !u!136 &3447010503210522059
 CapsuleCollider:
   m_ObjectHideFlags: 0
