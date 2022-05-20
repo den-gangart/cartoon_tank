@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5365115612282276790
+--- !u!1001 &8289547592070703116
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,11 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_Name
-      value: Tank_Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
-      propertyPath: m_TagString
-      value: Player
+      value: Tank_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4024992501267447158, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_RootOrder
@@ -59,47 +55,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455266973698917106, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c679d4de6e4be7499d2728243832c13, type: 2}
+    - target: {fileID: 4950391379869278556, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c679d4de6e4be7499d2728243832c13, type: 2}
+    - target: {fileID: 6431748204698842709, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c679d4de6e4be7499d2728243832c13, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
---- !u!114 &511962877771936420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
-  m_PrefabInstance: {fileID: 5365115612282276790}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d00b4e160c366984a8adf7c1ab9d6a7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3163049166753668308 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7030629518936004450, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
-  m_PrefabInstance: {fileID: 5365115612282276790}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7276610895222636913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ebacdc2e9ee44c429d165d9fbeb525f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &7276610895222636913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
-  m_PrefabInstance: {fileID: 5365115612282276790}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4706904246976732389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7276610895222636913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c08ac087355ed44b33ce3d29616de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tankMovement: {fileID: 3163049166753668308}
-  _gunShooter: {fileID: 511962877771936420}
-  _camera: {fileID: 0}

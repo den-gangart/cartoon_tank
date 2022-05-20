@@ -196,7 +196,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0609244, y: 1}
+    m_SensorSize: {x: 2.321016, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -230,7 +230,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4571493643966056434}
-  m_LocalRotation: {x: 0.101505935, y: -0.0000000047173643, z: 3.9213285e-10, w: 0.99483496}
+  m_LocalRotation: {x: 0.10150584, y: -0.0000000042793777, z: 4.3663698e-10, w: 0.99483496}
   m_LocalPosition: {x: 0, y: 6.81, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -452,6 +452,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4571493644211510399}
   - component: {fileID: 4571493644211510398}
+  - component: {fileID: 5917967541537183258}
+  - component: {fileID: 2253569708593534487}
   m_Layer: 0
   m_Name: CM FreeLook
   m_TagString: Untagged
@@ -507,7 +509,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0609244, y: 1}
+    m_SensorSize: {x: 2.321016, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -581,6 +583,49 @@ MonoBehaviour:
   - {fileID: 4571493645629101363}
   - {fileID: 4571493645425459294}
   - {fileID: 4571493643941986474}
+--- !u!114 &5917967541537183258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571493644211510397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd0ca66dc31ac2439a486c92cdae4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetTag: Player
+--- !u!114 &2253569708593534487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571493644211510397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: Tank
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 8
+  m_SmoothingTime: 0.45
+  m_Damping: 0.78
+  m_DampingWhenOccluded: 1.56
+  m_OptimalTargetDistance: 0
 --- !u!1 &4571493645249812300
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +822,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0609244, y: 1}
+    m_SensorSize: {x: 2.321016, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -888,7 +933,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0609244, y: 1}
+    m_SensorSize: {x: 2.321016, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
