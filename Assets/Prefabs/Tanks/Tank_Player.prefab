@@ -83,11 +83,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebacdc2e9ee44c429d165d9fbeb525f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &5639660883480164712 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 301918781418828510, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+  m_PrefabInstance: {fileID: 5365115612282276790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7276610895222636913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
   m_PrefabInstance: {fileID: 5365115612282276790}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4281425312224482766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276610895222636913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645b6f95fc2b24b46ad9d32cf4c7f3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunShooter: {fileID: 511962877771936420}
+  _rigidBody: {fileID: 5639660883480164712}
+  _impulsePower: 2000
 --- !u!114 &4706904246976732389
 MonoBehaviour:
   m_ObjectHideFlags: 0
