@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float  _bulletSpeed = 50f;
     [SerializeField] private float _maxLiveTime = 5f;
+    [SerializeField] private float _damageAmount = 100;
+    [SerializeField] private float _damageRandomRange = 10;
     [SerializeField] private GameObject _vfxPoint;
     [SerializeField] private GameObject _regularExplosionVFX;
     [SerializeField] private GameObject _groundExplosionVFX;
@@ -22,6 +24,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        HitTarget(other.gameObject);
         GenerateFX(other.tag);
         Destroy(gameObject);
     }
@@ -36,5 +39,15 @@ public class Bullet : MonoBehaviour
     {
         GameObject fxType = gameObjectTag == CustomTags.GROUND ? _groundExplosionVFX : _regularExplosionVFX;
         Instantiate(fxType, _vfxPoint.transform.position, transform.rotation);
+    }
+
+    private void HitTarget(GameObject target)
+    {
+        ArmorPart armorPart;
+        if (target.TryGetComponent(out armorPart))
+        {
+            float damage = Random.Range(_damageAmount - _damageRandomRange, _damageAmount + _damageRandomRange);
+            armorPart.TakeDamage(damage);
+        }
     }
 }

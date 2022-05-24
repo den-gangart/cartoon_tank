@@ -7,8 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private TankStateController _tankState;
     [SerializeField] private float _maxHealth;
-
-    private float _healthPoints;
+    [SerializeField] private float _healthPoints;
 
     private void Start()
     {
@@ -29,7 +28,8 @@ public class Health : MonoBehaviour
     {
         if(_healthPoints < amount)
         {
-            amount = _healthPoints;
+            Kill();
+            return;
         }
 
         _healthPoints -= amount;

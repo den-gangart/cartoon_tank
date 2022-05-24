@@ -11,8 +11,12 @@ public enum ETankState
 public class TankStateController : MonoBehaviour
 {
     [SerializeField] private ETankState _currentState;
+    [SerializeField] private List<MeshRenderer> _tankMeshComponents;
     [SerializeField] private TankMovement _tankMovement;
     [SerializeField] private GunShooter _gunShooter;
+    [SerializeField] private GameObject _destroyFireFX;
+    [SerializeField] private GameObject _destroyExplosionFX;
+    [SerializeField] private Material _destroyMaterial;
 
     public void UpdateState(ETankState newState)
     {
@@ -41,7 +45,19 @@ public class TankStateController : MonoBehaviour
             case ETankState.Destroed:
                 _tankMovement.DisableMovement();
                 _gunShooter.DisableShoot();
+                ApplyDestroyFX();
                 break;
         }
+    }
+
+    private void ApplyDestroyFX()
+    {
+        foreach(MeshRenderer tankComponent in _tankMeshComponents)
+        {
+            tankComponent.material = _destroyMaterial;
+        }
+
+        Instantiate(_destroyFireFX, transform);
+        Instantiate(_destroyExplosionFX, transform);
     }
 }

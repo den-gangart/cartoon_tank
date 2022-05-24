@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2339969193720198091}
   - component: {fileID: 7831441027862858565}
+  - component: {fileID: 1742056481638295706}
   m_Layer: 0
   m_Name: Wheel_b_Left
   m_TagString: Tank
@@ -62,6 +63,19 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!114 &1742056481638295706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116401206767205547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 8900381035301895547}
 --- !u!1 &1273397355466762265
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6260459744669553357}
   - component: {fileID: 6905571133188833108}
+  - component: {fileID: 7375986024391870127}
   m_Layer: 0
   m_Name: Wheel_b_Right
   m_TagString: Tank
@@ -238,6 +253,19 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!114 &7375986024391870127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905810634201755466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 8900381035301895547}
 --- !u!1 &3308724752575992159
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +369,7 @@ GameObject:
   - component: {fileID: 2491391066180179828}
   - component: {fileID: 8900381035301895547}
   - component: {fileID: 6063489232513321828}
+  - component: {fileID: 763147436186626164}
   m_Layer: 0
   m_Name: Tank_Base
   m_TagString: Tank
@@ -547,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tankState: {fileID: 6063489232513321828}
   _maxHealth: 100
+  _healthPoints: 0
 --- !u!114 &6063489232513321828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,8 +590,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentState: 0
+  _tankMeshComponents:
+  - {fileID: 4950391379869278556}
+  - {fileID: 6431748204698842709}
+  - {fileID: 4455266973698917106}
   _tankMovement: {fileID: 7030629518936004450}
   _gunShooter: {fileID: 5579506660670748946}
+  _destroyFireFX: {fileID: 100002, guid: 002c8e66c11fe4048a8c3a08b7f0fe74, type: 3}
+  _destroyExplosionFX: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
+  _destroyMaterial: {fileID: 2100000, guid: fa62bebac0406fd4e90c896bd63a0bab, type: 2}
+--- !u!114 &763147436186626164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354916976622783175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 8900381035301895547}
 --- !u!1 &3916225007155662313
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +749,7 @@ GameObject:
   - component: {fileID: 3315597999942278887}
   - component: {fileID: 6431748204698842709}
   - component: {fileID: 4218203484820172257}
+  - component: {fileID: 13523315146440606}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tank
@@ -785,6 +836,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.52, z: 1.15}
   m_Center: {x: 0, y: 0.34, z: 0.01}
+--- !u!114 &13523315146440606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326378089990777302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 8900381035301895547}
 --- !u!1 &6224531817163165255
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6791109708924403740}
   - component: {fileID: 399254129730876975}
+  - component: {fileID: 1093821510539074922}
   m_Layer: 0
   m_Name: Wheel_f_Right
   m_TagString: Tank
@@ -930,6 +995,19 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!114 &1093821510539074922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430971264205647930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 8900381035301895547}
 --- !u!1 &7159672893877245768
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3764977244869179607}
   - component: {fileID: 1113036909595949024}
+  - component: {fileID: 6087627617732855933}
   m_Layer: 0
   m_Name: Wheel_f_Left
   m_TagString: Tank
@@ -1027,6 +1106,19 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!114 &6087627617732855933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360386029460345131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 8900381035301895547}
 --- !u!1 &7487684025480060324
 GameObject:
   m_ObjectHideFlags: 0
