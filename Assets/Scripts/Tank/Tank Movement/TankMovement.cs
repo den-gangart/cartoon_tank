@@ -7,9 +7,12 @@ using UnityEngine;
 [RequireComponent(typeof(GunMovement))]
 public class TankMovement : MonoBehaviour, ITankMovement
 {
+    [SerializeField]  private bool _canMove;
+
     public BodyMovement Body { get; private set; }
     public TowerMovement Tower { get; private set; }
     public GunMovement Gun { get; private set; }
+
 
     private void Start()
     {
@@ -20,8 +23,23 @@ public class TankMovement : MonoBehaviour, ITankMovement
 
     public void Move(float horizontalInput, float verticalInput, Quaternion rotationTarget)
     {
-        Body.Move(horizontalInput, verticalInput);
-        Tower.Rotate(rotationTarget);
-        Gun.Rotate(rotationTarget);
+       if(_canMove == false)
+       {
+           return;
+       }
+
+       Body.Move(horizontalInput, verticalInput);
+       Tower.Rotate(rotationTarget);
+       Gun.Rotate(rotationTarget);
+    }
+
+    public void DisableMovement()
+    {
+        _canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        _canMove = true;
     }
 }

@@ -339,6 +339,8 @@ GameObject:
   - component: {fileID: 8973898864319102941}
   - component: {fileID: 941868183572917238}
   - component: {fileID: 2491391066180179828}
+  - component: {fileID: 8900381035301895547}
+  - component: {fileID: 6063489232513321828}
   m_Layer: 0
   m_Name: Tank_Base
   m_TagString: Tank
@@ -458,6 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebacdc2e9ee44c429d165d9fbeb525f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canMove: 1
 --- !u!114 &4732082559846941264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +532,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunShooter: {fileID: 5579506660670748946}
   _rigidBody: {fileID: 301918781418828510}
-  _impulsePower: 2000
+  _impulsePower: 4000
+--- !u!114 &8900381035301895547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354916976622783175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63f236030eeb544d90f1eef01ae6c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankState: {fileID: 6063489232513321828}
+  _maxHealth: 100
+--- !u!114 &6063489232513321828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354916976622783175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9645f13afb5ae2a41b636276191cec9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentState: 0
+  _tankMovement: {fileID: 7030629518936004450}
+  _gunShooter: {fileID: 5579506660670748946}
 --- !u!1 &3916225007155662313
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,10 +16,11 @@ public class GunShooter : MonoBehaviour
 
     private Action<Vector3> _shootAction;
     private bool _isReady = true;
+    private bool _canShoot = true;
 
     public void TryShoot()
     {
-        if(_isReady == false)
+        if (_canShoot == false || _isReady == false)
         {
             return;
         }
@@ -51,6 +52,16 @@ public class GunShooter : MonoBehaviour
     public void AddShootListener(Action<Vector3> evt)
     {
         _shootAction += evt;
+    }
+
+    public void EnableShoot()
+    {
+        _canShoot = true;
+    }
+
+    public void DisableShoot()
+    {
+        _canShoot = false;
     }
 
     private void OnDestroy()
