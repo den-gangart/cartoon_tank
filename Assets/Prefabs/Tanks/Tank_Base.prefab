@@ -75,7 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8900381035301895547}
 --- !u!1 &1273397355466762265
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8900381035301895547}
 --- !u!1 &3308724752575992159
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +367,7 @@ GameObject:
   - component: {fileID: 2491391066180179828}
   - component: {fileID: 8900381035301895547}
   - component: {fileID: 6063489232513321828}
+  - component: {fileID: 52292054281859336}
   - component: {fileID: 763147436186626164}
   m_Layer: 0
   m_Name: Tank_Base
@@ -599,6 +598,26 @@ MonoBehaviour:
   _destroyFireFX: {fileID: 100002, guid: 002c8e66c11fe4048a8c3a08b7f0fe74, type: 3}
   _destroyExplosionFX: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
   _destroyMaterial: {fileID: 2100000, guid: fa62bebac0406fd4e90c896bd63a0bab, type: 2}
+--- !u!114 &52292054281859336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354916976622783175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd38962e6b3a4cf4e86cb6fc21ab7269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _armorParts:
+  - {fileID: 763147436186626164}
+  - {fileID: 13523315146440606}
+  - {fileID: 1742056481638295706}
+  - {fileID: 7375986024391870127}
+  - {fileID: 6087627617732855933}
+  - {fileID: 1093821510539074922}
+  _health: {fileID: 8900381035301895547}
 --- !u!114 &763147436186626164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,7 +630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8900381035301895547}
 --- !u!1 &3916225007155662313
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8900381035301895547}
 --- !u!1 &6224531817163165255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8900381035301895547}
 --- !u!1 &7159672893877245768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8900381035301895547}
 --- !u!1 &7487684025480060324
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class GunShooter : MonoBehaviour
     [SerializeField] private float _reoladTime = 1f;
     [SerializeField] private Animator _animator;
 
-    private Action<Vector3> _shootAction;
+    public event EventHandler<Vector3> GunShoot;
     private bool _isReady = true;
     private bool _canShoot = true;
 
@@ -28,7 +28,7 @@ public class GunShooter : MonoBehaviour
         MakeShoot();
         StartCoroutine(Reolad());
 
-        _shootAction.Invoke(transform.forward);
+        GunShoot?.Invoke(this, transform.forward);
         _isReady = false;
     }
 
@@ -49,11 +49,6 @@ public class GunShooter : MonoBehaviour
         }
     }
 
-    public void AddShootListener(Action<Vector3> evt)
-    {
-        _shootAction += evt;
-    }
-
     public void EnableShoot()
     {
         _canShoot = true;
@@ -62,10 +57,5 @@ public class GunShooter : MonoBehaviour
     public void DisableShoot()
     {
         _canShoot = false;
-    }
-
-    private void OnDestroy()
-    {
-        _shootAction = null;
     }
 }
