@@ -8,9 +8,9 @@ public class TowerMovement : MonoBehaviour
     [SerializeField] private Transform _towerTransform;
 
 
-   public void Rotate(Quaternion rotationTarget) 
+   public void Rotate(Transform parent, Quaternion rotationTarget) 
    {
-        float _targetDRotationAnlge = rotationTarget.eulerAngles.y - transform.eulerAngles.y;
+        float _targetDRotationAnlge = rotationTarget.eulerAngles.y - parent.eulerAngles.y;
         Quaternion target = Quaternion.Euler(0, _targetDRotationAnlge, 0);
         _towerTransform.localRotation = Quaternion.Lerp(_towerTransform.localRotation, target, Time.deltaTime * _turnSpeed);
    }

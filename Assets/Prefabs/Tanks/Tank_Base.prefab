@@ -361,8 +361,6 @@ GameObject:
   - component: {fileID: 301918781418828510}
   - component: {fileID: 6363058223599984893}
   - component: {fileID: 7030629518936004450}
-  - component: {fileID: 4732082559846941264}
-  - component: {fileID: 8973898864319102941}
   - component: {fileID: 941868183572917238}
   - component: {fileID: 2491391066180179828}
   - component: {fileID: 8900381035301895547}
@@ -489,36 +487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canMove: 1
---- !u!114 &4732082559846941264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354916976622783175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb82dd3a1c63e04b950811102cc43b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turnSpeed: 8
-  _towerTransform: {fileID: 195303505891398014}
---- !u!114 &8973898864319102941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354916976622783175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ba25dc684abeb4586d8c14a2c2eced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxAngleDown: 20
-  _angleOffset: -10
-  _turnSpeed: 4
-  _gunTransform: {fileID: 2790548514053406936}
+  _bodyMovement: {fileID: 941868183572917238}
+  _towerMovement: {fileID: 6704839772708191787}
+  _gunMovement: {fileID: 926836932264276283}
 --- !u!114 &941868183572917238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,6 +613,7 @@ GameObject:
   - component: {fileID: 2541212771967017924}
   - component: {fileID: 4455266973698917106}
   - component: {fileID: 5579506660670748946}
+  - component: {fileID: 926836932264276283}
   - component: {fileID: 7247178640341569}
   m_Layer: 0
   m_Name: TankFree_Canon
@@ -735,6 +707,22 @@ MonoBehaviour:
   _shootFX: {fileID: 100008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
   _reoladTime: 1
   _animator: {fileID: 7247178640341569}
+--- !u!114 &926836932264276283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916225007155662313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ba25dc684abeb4586d8c14a2c2eced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxAngleDown: 20
+  _angleOffset: -10
+  _turnSpeed: 4
+  _gunTransform: {fileID: 2790548514053406936}
 --- !u!95 &7247178640341569
 Animator:
   serializedVersion: 4
@@ -768,6 +756,7 @@ GameObject:
   - component: {fileID: 6431748204698842709}
   - component: {fileID: 4218203484820172257}
   - component: {fileID: 13523315146440606}
+  - component: {fileID: 6704839772708191787}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tank
@@ -866,6 +855,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434cde39bdded69499e387dd4b552640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6704839772708191787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326378089990777302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb82dd3a1c63e04b950811102cc43b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turnSpeed: 2
+  _towerTransform: {fileID: 195303505891398014}
 --- !u!1 &6224531817163165255
 GameObject:
   m_ObjectHideFlags: 0
