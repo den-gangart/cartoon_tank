@@ -24,6 +24,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.isTrigger)
+        {
+            return;
+        }
+
         HitTarget(other.gameObject);
         GenerateFX(other.tag);
         Destroy(gameObject);
@@ -37,7 +42,7 @@ public class Bullet : MonoBehaviour
 
     private void GenerateFX(string gameObjectTag)
     {
-        GameObject fxType = gameObjectTag == CustomTags.GROUND ? _groundExplosionVFX : _regularExplosionVFX;
+        GameObject fxType = gameObjectTag == GameTags.Ground ? _groundExplosionVFX : _regularExplosionVFX;
         Instantiate(fxType, _vfxPoint.transform.position, transform.rotation);
     }
 

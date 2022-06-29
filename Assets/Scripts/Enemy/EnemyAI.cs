@@ -11,9 +11,11 @@ public enum EnemyState
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] private LineSight _lineSight;
     [SerializeField] private TankMovement _tankMovement;
     [SerializeField] private GunShooter _gunShooter;
     [SerializeField] private float _moveTime;
+    [SerializeField] private float _reactionTime;
     [SerializeField] private int _directionCount;
     [SerializeField] private Vector2 _forwardMoveRange;
     [SerializeField] private Vector2 _sideMoveRange;
@@ -22,6 +24,11 @@ public class EnemyAI : MonoBehaviour
     private Transform _target;
     private EnemyState _currentState;
     private Vector2 _moveDirection;
+
+    private void Start()
+    {
+        _lineSight.DetectPlayer += DetectTargetTransform;
+    }
 
     private void FixedUpdate()
     {
@@ -39,25 +46,17 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void DetectTargetTransform()
+    private void DetectTargetTransform(object sender, Transform target)
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
-        {
-            if (hit.collider.gameObject.tag == "Player")
-            {
-                _target = hit.collider.transform;
-            }
-        }
+        _target = target;
     }
 
     private void CalmState()
     {
-        DetectTargetTransform();
-
         if(_target != null)
         {
-            _currentState = EnemyState.ReadyToShoot;
+            _currentState = EnemyState.ChangePosition;
+            StartCoroutine(MakeReadyToShoot());
         }
     }
 
@@ -78,7 +77,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(HasObstacles())
         {
-            InverseDirection();
+            _moveDirection *= -1;
         }
 
         Vector3 relativePosition = _target.position - transform.position;
@@ -107,6 +106,12 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private IEnumerator MakeReadyToShoot()
+    {
+        yield return new WaitForSeconds(_reactionTime);
+        _currentState = EnemyState.ReadyToShoot;
+    }
+
     private bool HasObstacles()
     {
         Vector3 rayDirection = transform.forward;
@@ -114,8 +119,8 @@ public class EnemyAI : MonoBehaviour
         return Physics.Raycast(transform.position, rayDirection, _distanceToObstacle);
     }
 
-    private void InverseDirection()
+    private void OnDestroy()
     {
-        _moveDirection *= -1;
+        _lineSight.DetectPlayer -= DetectTargetTransform;
     }
 }
