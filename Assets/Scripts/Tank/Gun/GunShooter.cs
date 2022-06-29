@@ -58,4 +58,9 @@ public class GunShooter : MonoBehaviour
     {
         _canShoot = false;
     }
+
+    public bool isReolading()
+    {
+        return !_isReady;
+    }
 }

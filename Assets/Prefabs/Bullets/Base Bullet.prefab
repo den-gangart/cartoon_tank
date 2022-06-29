@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3447010503210522059}
   - component: {fileID: 5932391288875831681}
   m_Layer: 0
-  m_Name: "\u0421TF_Missile_Green"
+  m_Name: Base Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

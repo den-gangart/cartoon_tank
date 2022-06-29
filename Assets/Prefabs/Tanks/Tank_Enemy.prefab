@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 926836932264276283, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _angleOffset
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_Name
       value: Tank_Enemy
@@ -63,9 +67,67 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9c679d4de6e4be7499d2728243832c13, type: 2}
+    - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _reoladTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 4742552293509315438, guid: dce0a593f239a1e4a92735ca7ced23b5, type: 3}
     - target: {fileID: 6431748204698842709, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9c679d4de6e4be7499d2728243832c13, type: 2}
+    - target: {fileID: 6704839772708191787, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _turnSpeed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+--- !u!114 &1340863025806049134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7030629518936004450, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+  m_PrefabInstance: {fileID: 8289547592070703116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6738911896517665483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebacdc2e9ee44c429d165d9fbeb525f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4495718475748413726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+  m_PrefabInstance: {fileID: 8289547592070703116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00b4e160c366984a8adf7c1ab9d6a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6738911896517665483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+  m_PrefabInstance: {fileID: 8289547592070703116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7490901710523505749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6738911896517665483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f755b30bb9754e9d1707ef95a3891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tankMovement: {fileID: 1340863025806049134}
+  _gunShooter: {fileID: 4495718475748413726}
+  _moveTime: 5
+  _directionCount: 2
+  _forwardMoveRange: {x: -1, y: 1}
+  _sideMoveRange: {x: -1, y: 1}
+  _distanceToObstacle: 5
