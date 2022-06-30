@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3599691363286721870}
   m_Layer: 5
   m_Name: Canvas Crosshair
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 7287641030370824785}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,6 +202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116401206767205547, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 399254129730876975, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_WheelDampingRate
       value: 1
@@ -233,12 +237,32 @@ PrefabInstance:
     - target: {fileID: 1113036909595949024, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_SuspensionSpring.spring
       value: 90000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273397355466762265, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542876158151938416, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905810634201755466, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308724752575992159, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_Name
       value: Tank_Player
       objectReference: {fileID: 0}
     - target: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916225007155662313, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -286,6 +310,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4326378089990777302, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224531817163165255, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430971264205647930, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6905571133188833108, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_WheelDampingRate
       value: 1
@@ -302,6 +338,18 @@ PrefabInstance:
       propertyPath: m_SuspensionSpring.spring
       value: 90000
       objectReference: {fileID: 0}
+    - target: {fileID: 7159672893877245768, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360386029460345131, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487684025480060324, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7831441027862858565, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_WheelDampingRate
       value: 1
@@ -317,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 7831441027862858565, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_SuspensionSpring.spring
       value: 90000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450122983346347348, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
@@ -358,6 +410,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
   m_PrefabInstance: {fileID: 5365115612282276790}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &808770658511912666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276610895222636913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edefc3f324d289949adc65e39c547c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 3598439171686282957}
 --- !u!114 &4706904246976732389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,19 +438,6 @@ MonoBehaviour:
   _tankMovement: {fileID: 3163049166753668308}
   _gunShooter: {fileID: 511962877771936420}
   _camera: {fileID: 0}
---- !u!114 &808770658511912666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7276610895222636913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edefc3f324d289949adc65e39c547c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 3598439171686282957}
 --- !u!4 &7840412014690765678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2790548514053406936, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}

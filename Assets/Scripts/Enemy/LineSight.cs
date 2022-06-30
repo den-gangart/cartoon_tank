@@ -5,19 +5,60 @@ using UnityEngine;
 
 public class LineSight : MonoBehaviour
 {
+    [SerializeField] private Transform relativeTransform;
     public event EventHandler<Transform> DetectPlayer;
+    public event EventHandler<Transform> LostPlayer;
 
-    private void OnTriggerEnter(Collider other)
+    private bool _isPlayerVisible = false;
+
+    private void OnTriggerStay(Collider other)
     {
-        if(other.tag != GameTags.Player)
+        if (other.tag != GameTags.Player)
         {
             return;
         }
 
-        Vector3 relativePosition = other.transform.position - transform.position;
-        if (Physics.Raycast(transform.position, relativePosition, Mathf.Infinity))
+        CheckPlayerVisible(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag != GameTags.Player || !_isPlayerVisible)
         {
-            DetectPlayer?.Invoke(this, other.transform);
+            return;
         }
+
+        OnLostPlayer(other.transform);
+    }
+
+    private void CheckPlayerVisible(Collider playerCollider)
+    {
+        RaycastHit hit;
+        Vector3 relativePosition = playerCollider.transform.position - relativeTransform.position;
+        bool hasObjectsOnWay = Physics.Raycast(relativeTransform.position, relativePosition, out hit);
+        bool isPlayerOnWay = hasObjectsOnWay && hit.transform.tag == GameTags.Player;
+
+        Debug.DrawRay(relativeTransform.position, relativePosition);
+
+        if (isPlayerOnWay && !_isPlayerVisible)
+        {
+            OnDetectPlayer(playerCollider.transform);
+        }
+        else if(!isPlayerOnWay && _isPlayerVisible)
+        {
+            OnLostPlayer(playerCollider.transform);
+        }
+    }
+
+    private void OnDetectPlayer(Transform player)
+    {
+        DetectPlayer?.Invoke(this, player);
+        _isPlayerVisible = true;
+    }
+
+    private void OnLostPlayer(Transform player)
+    {
+        LostPlayer?.Invoke(this, player.transform);
+        _isPlayerVisible = false;
     }
 }

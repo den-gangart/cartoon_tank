@@ -28,11 +28,16 @@ public class TankMovement : MonoBehaviour, ITankMovement
     public void DisableMovement()
     {
         _canMove = false;
-        Body.Move(0, 0);
+        StopMovement();
     }
 
     public void EnableMovement()
     {
         _canMove = true;
     }
+
+   public void StopMovement()
+   {
+        Body.Move(0, 0);
+   }
 }
