@@ -19324,7 +19324,7 @@ GameObject:
   - component: {fileID: 19900008}
   - component: {fileID: 7379724151476673421}
   m_Layer: 0
-  m_Name: WFX_Explosion Simple
+  m_Name: Smoke FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4702,7 +4702,7 @@ GameObject:
   - component: {fileID: 19900002}
   - component: {fileID: 6646534119586700040}
   m_Layer: 0
-  m_Name: WFX_Fire Natural Broad (Black Smoke)
+  m_Name: Fire FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

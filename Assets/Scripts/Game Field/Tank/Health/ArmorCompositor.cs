@@ -12,12 +12,18 @@ public class ArmorCompositor : MonoBehaviour
         foreach (ArmorPart armorPart in _armorParts)
         {
             armorPart.ArmorHit += OnTakedDamage;
+            armorPart.Kill += OnKillForce;
         }
     }
 
     private void OnTakedDamage(object sender, float damage)
     {
         _health.TakeDamage(damage);
+    }
+
+    private void OnKillForce()
+    {
+        _health.Kill();
     }
 
     private void OnDestroy()
