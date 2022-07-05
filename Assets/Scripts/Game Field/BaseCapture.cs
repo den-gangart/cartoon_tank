@@ -16,7 +16,7 @@ public class BaseCapture : MonoBehaviour
     private bool _isCompleted = false;
 
     public event EventHandler<float> Capture;
-    public event Action CaptureCompleed;
+    public event Action CaptureCompleted;
     public event Action CaptureFailed;
 
     void Start()
@@ -54,7 +54,7 @@ public class BaseCapture : MonoBehaviour
         }
 
         _isCompleted = true;
-        CaptureCompleed?.Invoke();
+        CaptureCompleted?.Invoke();
     }
 }
 

@@ -11,23 +11,10 @@ public enum EUIEvent
    GameResume,
 }
 
-public class UIEventSystem: MonoBehaviour
+public class UIEventSystem: Singleton<UIEventSystem>
 {
-    public static UIEventSystem Instance { get; private set; }
     private Dictionary<EUIEvent, Action> _UIEventsListeners = new Dictionary<EUIEvent, Action>();
     private Dictionary<EUIEvent, Action<object>> _UIEventsListenersWithParamater = new Dictionary<EUIEvent, Action<object>>();
-
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if(Instance != this)
-        {
-            Destroy(this);
-        }
-    }
 
     public static void AddUIEventListener(EUIEvent uiEvent, Action evt)
     {
@@ -102,14 +89,6 @@ public class UIEventSystem: MonoBehaviour
         if (Instance._UIEventsListenersWithParamater.TryGetValue(uiEvent, out var action))
         {
             action.Invoke(obj);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if(Instance == this)
-        {
-            Instance = null;
         }
     }
 }

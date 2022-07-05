@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float _healthPoints;
 
     public event EventHandler<float> HealthChange;
+    public event Action Killed;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class Health : MonoBehaviour
         _healthPoints = 0;
         _tankState.UpdateState(ETankState.Destroed);
         HealthChange?.Invoke(this, _healthPoints);
+        Killed?.Invoke();
     }
 
     public bool isAlive()

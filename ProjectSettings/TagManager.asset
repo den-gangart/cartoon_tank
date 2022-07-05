@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Tank
   - Enemy
+  - Level Task
   layers:
   - Default
   - TransparentFX
