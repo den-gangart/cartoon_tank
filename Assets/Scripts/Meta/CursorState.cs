@@ -16,8 +16,8 @@ public class CursorState : MonoBehaviour
     private void Start()
     {
         UpdateState(_defaultState);
-        UIEventSystem.AddUIEventListener(EUIEvent.GamePause, OnGamePause);
-        UIEventSystem.AddUIEventListener(EUIEvent.GameResume, OnGameResume);
+        EventSystem.AddEventListener(EContentEventType.GamePause, OnGamePause);
+        EventSystem.AddEventListener(EContentEventType.GameResume, OnGameResume);
 }
 
     private void OnGamePause()
@@ -48,7 +48,7 @@ public class CursorState : MonoBehaviour
 
     private void OnDestroy()
     {
-        UIEventSystem.RemoveUIEventListener(EUIEvent.GamePause, OnGamePause);
-        UIEventSystem.RemoveUIEventListener(EUIEvent.GameResume, OnGameResume);
+        EventSystem.RemoveEventListener(EContentEventType.GamePause, OnGamePause);
+        EventSystem.RemoveEventListener(EContentEventType.GameResume, OnGameResume);
     }
 }

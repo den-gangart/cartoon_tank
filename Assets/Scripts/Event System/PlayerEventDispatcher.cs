@@ -11,12 +11,8 @@ public class PlayerEventDispatcher : MonoBehaviour
         if (_health != null)
         {
             _health.HealthChange += OnHealthChanged;
+            _health.Killed += OnPlayerDead;
         }
-    }
-
-    private void OnHealthChanged(object sender, float healthAmount)
-    {
-        UIEventSystem.Broadcast(EUIEvent.HealthChanged, healthAmount);
     }
 
     private void OnDestroy()
@@ -24,6 +20,18 @@ public class PlayerEventDispatcher : MonoBehaviour
         if (_health != null)
         {
             _health.HealthChange -= OnHealthChanged;
+            _health.Killed -= OnPlayerDead;
         }
     }
+
+    private void OnHealthChanged(object sender, float healthAmount)
+    {
+        EventSystem.Broadcast(EContentEventType.HealthChanged, healthAmount);
+    }
+
+    private void OnPlayerDead()
+    {
+        EventSystem.Broadcast(EContentEventType.PlayerDead);
+    }
+
 }
