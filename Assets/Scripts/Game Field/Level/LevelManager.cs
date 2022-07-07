@@ -8,6 +8,8 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private List<LevelTask> _levelTaskList;
     [SerializeField] private float _winDelay = 0.5f;
     [SerializeField] private float _loseDelay = 0.5f;
+    [SerializeField] private float _regularTimeScale = 1f;
+    [SerializeField] private float _timeScaleOnEnd = 0.1f;
     private int _taskCount => _levelTaskList.Count;
 
     public event Action<LevelTask> TaskAdded;
@@ -20,6 +22,7 @@ public class LevelManager : Singleton<LevelManager>
         base.OnAwake();
         Instance._levelTaskList = new List<LevelTask>();
         EventSystem.AddEventListener(EContentEventType.PlayerDead, OnPlayerDead);
+        Time.timeScale = _regularTimeScale;
     }
 
     public static void AddLevelTask(LevelTask levelTask)
@@ -58,12 +61,14 @@ public class LevelManager : Singleton<LevelManager>
 
     private IEnumerator OnLevelPassed()
     {
+        Time.timeScale = _timeScaleOnEnd;
         yield return new WaitForSeconds(_winDelay);
         Instance.LevelPassed?.Invoke();
     }
 
     private IEnumerator OnLevelFailed()
     {
+        Time.timeScale = _timeScaleOnEnd;
         yield return new WaitForSeconds(_loseDelay);
         Instance.LevelFailed?.Invoke();
     }

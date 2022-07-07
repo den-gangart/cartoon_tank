@@ -17,6 +17,8 @@ public class CursorState : MonoBehaviour
     {
         UpdateState(_defaultState);
         EventSystem.AddEventListener(EContentEventType.GamePause, OnGamePause);
+        EventSystem.AddEventListener(EContentEventType.Win, OnGamePause);
+        EventSystem.AddEventListener(EContentEventType.Lose, OnGamePause);
         EventSystem.AddEventListener(EContentEventType.GameResume, OnGameResume);
 }
 

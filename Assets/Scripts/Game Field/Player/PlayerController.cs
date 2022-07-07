@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera _camera;
     private Quaternion _cameraRotation => _camera.transform.rotation;
 
+    private bool _controlEnabled = true;
+
     private void Start()
     {
         if (_tankMovement == null)
@@ -20,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0) && _controlEnabled)
         {
             _gunShooter.TryShoot();
         }
@@ -28,9 +30,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(_controlEnabled == false)
+        {
+            return;
+        }
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
         _tankMovement.Move(horizontalInput, verticalInput, _cameraRotation);
+    }
+
+    public void EnableControl()
+    {
+        _controlEnabled = true;
+    }
+
+    public void DisableControl()
+    {
+        _controlEnabled = false;
     }
 }

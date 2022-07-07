@@ -438,6 +438,18 @@ MonoBehaviour:
   _tankMovement: {fileID: 3163049166753668308}
   _gunShooter: {fileID: 511962877771936420}
   _camera: {fileID: 0}
+--- !u!114 &7841804650833817385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276610895222636913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23a94e236c715d429d7c4ed5d6578b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7840412014690765678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2790548514053406936, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}

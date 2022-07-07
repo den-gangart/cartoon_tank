@@ -32,7 +32,10 @@ public class Health : MonoBehaviour
     {
         if (_healthPoints - amount <= 0)
         {
-            Kill();
+            if (_healthPoints != 0)
+            {
+                Kill();
+            }
             return;
         }
 
@@ -44,6 +47,7 @@ public class Health : MonoBehaviour
     {
         _healthPoints = 0;
         _tankState.UpdateState(ETankState.Destroed);
+
         HealthChange?.Invoke(this, _healthPoints);
         Killed?.Invoke();
     }

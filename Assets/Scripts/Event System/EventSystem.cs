@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 public enum EContentEventType
 {
@@ -14,84 +14,94 @@ public enum EContentEventType
     TaskAdded,
 }
 
-public class EventSystem: Singleton<EventSystem>
+public static class EventSystem
 {
-    private Dictionary<EContentEventType, Action> _eventListeners = new Dictionary<EContentEventType, Action>();
-    private Dictionary<EContentEventType, Action<object>> _eventListenersWithParamater = new Dictionary<EContentEventType, Action<object>>();
+    private static Dictionary<EContentEventType, Delegate> _eventListeners = new Dictionary<EContentEventType, Delegate>();
+    private static Dictionary<EContentEventType, Delegate> _eventListenersWithParamater = new Dictionary<EContentEventType, Delegate>();
 
-    public static void AddEventListener(EContentEventType eventType, Action evt)
+    private static Action<object> Convert<T>(Action<T> myActionT)
     {
-        if (Instance._eventListeners.TryGetValue(eventType, out Action action))
+        if (myActionT == null) return null;
+        else return new Action<object>(o => myActionT((T)o));
+    }
+
+    public static void AddEventListener(EContentEventType eventType, Action callBack)
+    {
+        if (_eventListeners.TryGetValue(eventType, out Delegate mergedCallBacks))
         {
-            Instance._eventListeners[eventType] = action += evt;
+            _eventListeners[eventType] = Delegate.Combine(mergedCallBacks, callBack);
         }
         else
         {
-            Instance._eventListeners[eventType] = evt;
+            _eventListeners[eventType] = callBack;
         }
     }
 
-    public static void AddEventListener<T>(EContentEventType eventType, Action<T> evt)
+    public static void AddEventListener<T>(EContentEventType eventType, Action<T> callBack)
     {
-        Action<object> newAction = (e) => evt((T)e);
-
-        if (Instance._eventListenersWithParamater.TryGetValue(eventType, out Action<object> action))
+        if (_eventListenersWithParamater.TryGetValue(eventType, out Delegate mergedCallBacks))
         {
-            Instance._eventListenersWithParamater[eventType] = action += newAction;
+            _eventListenersWithParamater[eventType] = Delegate.Combine(mergedCallBacks, callBack);
         }
         else
         {
-            Instance._eventListenersWithParamater[eventType] = newAction;
+            _eventListenersWithParamater[eventType] = callBack;
         }
     }
 
-    public static void RemoveEventListener(EContentEventType eventType, Action evt)
+    public static void RemoveEventListener(EContentEventType eventType, Action callBack)
     {
-        if (Instance._eventListeners.TryGetValue(eventType, out var action))
+        if (_eventListeners.TryGetValue(eventType, out Delegate mergedCallBacks))
         {
-            action -= evt;
-            if (action == null)
+            mergedCallBacks = Delegate.Remove(mergedCallBacks, callBack);
+            if (mergedCallBacks == null)
             {
-                Instance._eventListeners.Remove(eventType);
+                _eventListeners.Remove(eventType);
             }
             else
             {
-                Instance._eventListeners[eventType] = action;
+                _eventListeners[eventType] = mergedCallBacks;
             }
         }
     }
 
-    public static void RemoveEventListener<T>(EContentEventType eventType, Action<T> evt)
+    public static void RemoveEventListener<T>(EContentEventType eventType, Action<T> callBack)
     {
-        if (Instance._eventListenersWithParamater.TryGetValue(eventType, out var action))
-        {
-            Action<object> removeAction = (e) => evt((T)e);
-            action -= removeAction;
-
-            if (action == null)
+        if (_eventListenersWithParamater.TryGetValue(eventType, out Delegate mergedCallBacks))
+        { 
+            mergedCallBacks = Delegate.Remove(mergedCallBacks, callBack);
+            if (mergedCallBacks == null)
             {
-                Instance._eventListenersWithParamater.Remove(eventType);
+                _eventListenersWithParamater.Remove(eventType);
             }
             else
             {
-                Instance._eventListenersWithParamater[eventType] = action;
+                _eventListenersWithParamater[eventType] = mergedCallBacks;
             }
         }
     }
 
     public static void Broadcast(EContentEventType eventType)
     {
-        if (Instance._eventListeners.TryGetValue(eventType, out var action))
+        if (_eventListeners.TryGetValue(eventType, out var mergedCallBacks))
         {
-            action.Invoke();
+            Action[] actionList = mergedCallBacks.GetInvocationList().Cast<Action>().ToArray();
+            foreach(Action action in actionList)
+            {
+                action.Invoke();
+            }
         }
     }
 
-    public static void Broadcast(EContentEventType eventType, object obj)
+    public static void Broadcast<T>(EContentEventType eventType, T arg)
     {
-        if (Instance._eventListenersWithParamater.TryGetValue(eventType, out var action))
+        if (_eventListenersWithParamater.TryGetValue(eventType, out var mergedCallBacks))
         {
-            action.Invoke(obj);
+            Action<T>[] actionList = mergedCallBacks.GetInvocationList().Cast<Action<T>>().ToArray();
+            foreach (Action<T> action in actionList)
+            {
+                action.Invoke(arg);
+            }
         }
     }
 }

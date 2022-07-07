@@ -5154,7 +5154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _captureLength: 100
   _stepCount: 50
-  _captureSpeed: 0.5
+  _captureSpeed: 0.25
 --- !u!135 &9063901554852386073
 SphereCollider:
   m_ObjectHideFlags: 0
