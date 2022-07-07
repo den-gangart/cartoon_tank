@@ -18,8 +18,11 @@ public enum TaskType
 public class LevelTask : MonoBehaviour
 {
     public event Action<LevelTask> Complete;
+    public string Description { get { return _description; } }
 
     [SerializeField] protected TaskStatus _status = TaskStatus.InProgress;
+    [SerializeField] protected string _description;
+
     protected TaskType _taskType;
 
     private void Start()

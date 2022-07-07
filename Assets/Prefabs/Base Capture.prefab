@@ -5180,6 +5180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d5614e595fcad49bfc33ba4172b31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
+  _description: Capture the base
 --- !u!1 &6884180780217303313
 GameObject:
   m_ObjectHideFlags: 0

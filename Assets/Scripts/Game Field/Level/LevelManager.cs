@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,12 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private List<LevelTask> _levelTaskList;
     [SerializeField] private float _winDelay = 0.5f;
     [SerializeField] private float _loseDelay = 0.5f;
-
     private int _taskCount => _levelTaskList.Count;
+
+    public event Action<LevelTask> TaskAdded;
+    public event Action<LevelTask> TaskCompleted;
+    public event Action LevelPassed;
+    public event Action LevelFailed;
 
     protected override void OnAwake()
     {
@@ -26,6 +31,7 @@ public class LevelManager : Singleton<LevelManager>
 
         Instance._levelTaskList.Add(levelTask);
         levelTask.Complete += Instance.OnTaskCompleted;
+        Instance.TaskAdded?.Invoke(levelTask);
     }
 
     private static void RemoveLevelTask(LevelTask levelTask)
@@ -36,7 +42,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void OnTaskCompleted(LevelTask levelTask)
     {
-        EventSystem.Broadcast(EContentEventType.TaskCompleted, levelTask);
+        Instance.TaskCompleted?.Invoke(levelTask);
         RemoveLevelTask(levelTask);
         
         if(_taskCount == 0)
@@ -53,13 +59,13 @@ public class LevelManager : Singleton<LevelManager>
     private IEnumerator OnLevelPassed()
     {
         yield return new WaitForSeconds(_winDelay);
-        EventSystem.Broadcast(EContentEventType.Win);
+        Instance.LevelPassed?.Invoke();
     }
 
     private IEnumerator OnLevelFailed()
     {
         yield return new WaitForSeconds(_loseDelay);
-        EventSystem.Broadcast(EContentEventType.Lose);
+        Instance.LevelFailed?.Invoke();
     }
 
     private void OnDestroy()

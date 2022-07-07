@@ -11,6 +11,7 @@ public enum EContentEventType
     GamePause,
     GameResume,
     TaskCompleted,
+    TaskAdded,
 }
 
 public class EventSystem: Singleton<EventSystem>
