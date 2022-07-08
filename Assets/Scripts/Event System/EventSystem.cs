@@ -12,18 +12,13 @@ public enum EContentEventType
     GameResume,
     TaskCompleted,
     TaskAdded,
+    CaptureAdded,
 }
 
 public static class EventSystem
 {
     private static Dictionary<EContentEventType, Delegate> _eventListeners = new Dictionary<EContentEventType, Delegate>();
     private static Dictionary<EContentEventType, Delegate> _eventListenersWithParamater = new Dictionary<EContentEventType, Delegate>();
-
-    private static Action<object> Convert<T>(Action<T> myActionT)
-    {
-        if (myActionT == null) return null;
-        else return new Action<object>(o => myActionT((T)o));
-    }
 
     public static void AddEventListener(EContentEventType eventType, Action callBack)
     {

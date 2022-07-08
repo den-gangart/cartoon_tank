@@ -15,7 +15,8 @@ public class BaseCapture : MonoBehaviour
     private IEnumerator _captureCoroutine;
     private bool _isCompleted = false;
 
-    public event EventHandler<float> Capture;
+    public event Action<float> Capture;
+    public event Action CaptureStarted;
     public event Action CaptureCompleted;
     public event Action CaptureFailed;
 
@@ -31,6 +32,7 @@ public class BaseCapture : MonoBehaviour
             _invaderCollider = other;
             _captureCoroutine = Capturing();
             StartCoroutine(_captureCoroutine);
+            CaptureStarted?.Invoke();
         }
     }
 
@@ -49,7 +51,7 @@ public class BaseCapture : MonoBehaviour
         for(int i = 0; i < _stepCount; i++)
         {
             _captureAmount += _stepLength;
-            Capture?.Invoke(this, _captureAmount);
+            Capture?.Invoke(_captureAmount / _captureLength);
             yield return new WaitForSeconds(_captureSpeed);
         }
 
