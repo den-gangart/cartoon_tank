@@ -52,6 +52,11 @@ public class Health : MonoBehaviour
         Killed?.Invoke();
     }
 
+    public float GetHealthInPercent()
+    {
+        return _healthPoints / _maxHealth;
+    }
+
     public bool isAlive()
     {
         return _healthPoints > 0;
