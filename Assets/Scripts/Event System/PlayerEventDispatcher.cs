@@ -26,7 +26,7 @@ public class PlayerEventDispatcher : MonoBehaviour
 
     private void OnHealthChanged(object sender, float healthAmount)
     {
-        EventSystem.Broadcast(EContentEventType.HealthChanged, healthAmount);
+        EventSystem.Broadcast(EContentEventType.HealthChanged, _health.GetHealthInPercent());
     }
 
     private void OnPlayerDead()
