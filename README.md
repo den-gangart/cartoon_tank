@@ -4,8 +4,22 @@ Base features:
 - driving by tank (with wheels);
 - rotation control for tower and gun;
 - shooting;
-- shoot reaction (kickback when shooting and explosion effects);
 - dynamic crosshair;
 - hit and destroying enemies;
+- simple enemy AI;
+- base capture;
+- level structure (design, tasks, possibility to win or lose)
+- sound design (with using mixers);
 
-All assets for UI and demo scene i downoladed from Asset Store (used empty models without any scripts).
+Used techonlogies:
+- physics;
+- event system;
+- object`s pool;
+- scriptable objects;
+- cinemachine;
+- post proccessing;
+- simple animations;
+- UI;
+- particles for FX;
+
+All assets for UI and demo scene I downoladed from Asset Store (used empty models without any scripts).
