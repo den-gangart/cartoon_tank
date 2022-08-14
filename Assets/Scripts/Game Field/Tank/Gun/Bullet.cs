@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float  _bulletSpeed = 50f;
@@ -10,15 +11,17 @@ public class Bullet : MonoBehaviour
     [SerializeField] private GameObject _vfxPoint;
     [SerializeField] private GameObject _regularExplosionVFX;
     [SerializeField] private GameObject _groundExplosionVFX;
+    private Rigidbody _rigidbody;
 
     private void Start()
     {
         StartCoroutine(DestroyOnMiss());
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * _bulletSpeed * Time.deltaTime);
+        _rigidbody.MovePosition(transform.position + transform.forward * _bulletSpeed);
     }
 
     private void OnTriggerEnter(Collider other)

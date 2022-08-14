@@ -52,5 +52,7 @@ public class CursorState : MonoBehaviour
     {
         EventSystem.RemoveEventListener(EContentEventType.GamePause, OnGamePause);
         EventSystem.RemoveEventListener(EContentEventType.GameResume, OnGameResume);
+        EventSystem.RemoveEventListener(EContentEventType.Lose, OnGamePause);
+        EventSystem.RemoveEventListener(EContentEventType.Win, OnGamePause);
     }
 }
