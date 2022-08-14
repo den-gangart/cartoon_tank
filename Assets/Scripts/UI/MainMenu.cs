@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnStartClick()
     {
-        SceneManager.LoadScene(SceneNames.LEVEL_1);
+        SceneManager.LoadSceneAsync(SceneNames.LEVEL_1);
     }
 
     private void OnSettingClick()
