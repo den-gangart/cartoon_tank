@@ -43,6 +43,8 @@ public class GunShooter : MonoBehaviour
         Instantiate(_bulletPrefab, _shootPoint.transform.position, transform.rotation);
         Instantiate(_shootFX, _fxPoint.transform.position, transform.rotation);
 
+        AudioHandler.PlayGameSound("Explosion", gameObject);
+
         if (_animator != null)
         {
             _animator.SetTrigger("Shoot");

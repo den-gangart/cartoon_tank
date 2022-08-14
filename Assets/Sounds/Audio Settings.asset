@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c071b9cb2daa23f4f9fd9996bbf41191, type: 3}
+  m_Name: Audio Settings
+  m_EditorClassIdentifier: 
+  _audioList:
+  - _assetName: Explosion
+    _clip: {fileID: 8300000, guid: 9456e3e02db09a44188d94a3d4e2b53c, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 1
+    _spatialBlend: 1
+    _reverbZoneMix: 0
+  - _assetName: BGM_Menu
+    _clip: {fileID: 8300000, guid: 3663a53664df44a4c82618f715d9bcfb, type: 3}
+    _mixerGroup: {fileID: -2022673723191987861, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 0.5
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  - _assetName: BGM_Level
+    _clip: {fileID: 8300000, guid: 5efcfa2490f00dc41b6c24633cae29b0, type: 3}
+    _mixerGroup: {fileID: -2022673723191987861, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 0.5
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  _mixerGroupList:
+  - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _parameterName: masterVolume
+    _volume: 0
+  - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _parameterName: fxVolume
+    _volume: 0
+  - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _parameterName: musicVolume
+    _volume: 0

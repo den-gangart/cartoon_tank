@@ -13,6 +13,8 @@ public enum EContentEventType
     TaskCompleted,
     TaskAdded,
     CaptureAdded,
+    StopBackgroundMusic,
+    PlayBackgroundMusic,
 }
 
 public static class EventSystem

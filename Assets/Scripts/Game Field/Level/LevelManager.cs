@@ -64,6 +64,7 @@ public class LevelManager : Singleton<LevelManager>
         Time.timeScale = _timeScaleOnEnd;
         yield return new WaitForSeconds(_winDelay);
         Instance.LevelPassed?.Invoke();
+        EventSystem.Broadcast(EContentEventType.StopBackgroundMusic);
     }
 
     private IEnumerator OnLevelFailed()
@@ -71,6 +72,7 @@ public class LevelManager : Singleton<LevelManager>
         Time.timeScale = _timeScaleOnEnd;
         yield return new WaitForSeconds(_loseDelay);
         Instance.LevelFailed?.Invoke();
+        EventSystem.Broadcast(EContentEventType.StopBackgroundMusic);
     }
 
     private void OnDestroy()
