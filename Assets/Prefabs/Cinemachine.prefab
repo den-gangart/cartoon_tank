@@ -1168,3 +1168,5 @@ MonoBehaviour:
   _finishSaturation: -100
   _defaultBloomIntensity: 0
   _finishBloomIntensity: 10
+  _defaultFocusDistance: 7.67
+  _finishFocusDistance: 0.1

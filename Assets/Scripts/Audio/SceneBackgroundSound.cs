@@ -15,7 +15,7 @@ public class SceneBackgroundSound : MonoBehaviour
     private void Start()
     {
         EventSystem.AddEventListener(EContentEventType.GamePause, OnGamePaused);
-        EventSystem.AddEventListener(EContentEventType.GamePause, OnGamePaused);
+        EventSystem.AddEventListener(EContentEventType.GameResume, OnGameResumed);
         EventSystem.AddEventListener(EContentEventType.StopBackgroundMusic, OnStop);
         EventSystem.AddEventListener(EContentEventType.PlayBackgroundMusic, OnPlay);
         SceneManager.sceneLoaded += OnSceneLoaded;

@@ -10,6 +10,7 @@ public class AudioSourceHandler : MonoBehaviour
 
     private AudioSource _audioSource;
     private PooledObject _pooledObject;
+    private bool _isPause = false;
 
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class AudioSourceHandler : MonoBehaviour
 
     private void Update()
     {
-        if(!_audioSource.isPlaying)
+        if (!_audioSource.isPlaying && _isPause == false)
         {
             _pooledObject.ReturnToPool();
             SoundStopped?.Invoke(this);
@@ -36,15 +37,18 @@ public class AudioSourceHandler : MonoBehaviour
     public void Stop()
     {
         _audioSource.Stop();
+        _isPause = false;
     }
 
     public void Pause()
     {
         _audioSource.Pause();
+        _isPause = true;
     }
 
     public void Resume()
     {
         _audioSource.UnPause();
+        _isPause = false;
     }
 }

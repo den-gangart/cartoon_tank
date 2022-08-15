@@ -1,28 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class PausePopup : MonoBehaviour
 {
-    [SerializeField] private Button _startButton;
+    [SerializeField] private Button _resumeButton;
     [SerializeField] private Button _settingsButton;
-    [SerializeField] private Button _exitButton;
+    [SerializeField] private Button _backToMenuButton;
     [SerializeField] private PopupWindow _settingsPopup;
     [SerializeField] private Animator _mainAnimator;
-    [SerializeField] private float _regularTimeScale = 1f;
 
     void Start()
     {
-        _startButton?.onClick.AddListener(OnStartClick);
+        _resumeButton?.onClick.AddListener(OnResumeClick);
         _settingsButton?.onClick.AddListener(OnSettingClick);
-        _exitButton?.onClick.AddListener(OnExitClick);
-
-        Time.timeScale = _regularTimeScale;
+        _backToMenuButton?.onClick.AddListener(OnBackToMenuClick);
     }
 
-    private void OnStartClick()
+    private void OnBackToMenuClick()
     {
-        SceneManager.LoadSceneAsync(SceneNames.LEVEL_1);
+        SceneManager.LoadSceneAsync(SceneNames.MAIN_MENU);
     }
 
     private void OnSettingClick()
@@ -32,9 +31,9 @@ public class MainMenu : MonoBehaviour
         popupWindow.OnPopupClosed.AddListener(ShowMenu);
     }
 
-    private void OnExitClick()
+    private void OnResumeClick()
     {
-        Application.Quit();
+        EventSystem.Broadcast(EContentEventType.PauseButtonPressed);
     }
 
     public void HideMenu()

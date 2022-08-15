@@ -11,6 +11,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private float _regularTimeScale = 1f;
     [SerializeField] private float _timeScaleOnEnd = 0.1f;
     private int _taskCount => _levelTaskList.Count;
+    private bool _isLevelOnPause = false;
 
     public event Action<LevelTask> TaskAdded;
     public event Action<LevelTask> TaskCompleted;
@@ -22,6 +23,7 @@ public class LevelManager : Singleton<LevelManager>
         base.OnAwake();
         Instance._levelTaskList = new List<LevelTask>();
         EventSystem.AddEventListener(EContentEventType.PlayerDead, OnPlayerDead);
+        EventSystem.AddEventListener(EContentEventType.PauseButtonPressed, OnButtonPausePressed);
         Time.timeScale = _regularTimeScale;
     }
 
@@ -75,8 +77,25 @@ public class LevelManager : Singleton<LevelManager>
         EventSystem.Broadcast(EContentEventType.StopBackgroundMusic);
     }
 
+    private void OnButtonPausePressed()
+    {
+        if(_isLevelOnPause)
+        {
+            EventSystem.Broadcast(EContentEventType.GameResume);
+            Time.timeScale = _regularTimeScale;
+            _isLevelOnPause = false;
+        }
+        else
+        {
+            EventSystem.Broadcast(EContentEventType.GamePause);
+            Time.timeScale = 0;
+            _isLevelOnPause = true;
+        }
+    }
+
     private void OnDestroy()
     {
         EventSystem.RemoveEventListener(EContentEventType.PlayerDead, OnPlayerDead);
+        EventSystem.RemoveEventListener(EContentEventType.PauseButtonPressed, OnButtonPausePressed);
     }
 }

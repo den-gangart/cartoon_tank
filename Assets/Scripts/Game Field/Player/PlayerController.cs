@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
         {
             _gunShooter.TryShoot();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            EventSystem.Broadcast(EContentEventType.PauseButtonPressed);
+        }
     }
 
     private void FixedUpdate()
