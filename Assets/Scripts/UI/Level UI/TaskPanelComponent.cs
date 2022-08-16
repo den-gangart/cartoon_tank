@@ -8,6 +8,7 @@ public class TaskPanelComponent : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _descriptionText;
     [SerializeField] private Toggle _toggle;
+    [SerializeField] private Animator _animator;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class TaskPanelComponent : MonoBehaviour
     private void OnTaskCompleted(LevelTask task)
     {
         _toggle.isOn = true;
+        _animator.SetTrigger("Win");
     }
 
     public void UpdateDescription(string description)

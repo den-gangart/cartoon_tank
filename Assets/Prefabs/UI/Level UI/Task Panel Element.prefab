@@ -77,7 +77,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282580735
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8569446063651255876}
   - component: {fileID: 8569446063651255877}
   - component: {fileID: 3711943946765772331}
+  - component: {fileID: 5236920583197161690}
   m_Layer: 5
   m_Name: Task Panel Element
   m_TagString: Untagged
@@ -239,6 +240,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _descriptionText: {fileID: 2481377714336599443}
   _toggle: {fileID: 8569446063651255877}
+  _animator: {fileID: 5236920583197161690}
+--- !u!95 &5236920583197161690
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569446063651255879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb54b8197240c104eb63000dae925d86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8569446064068973875
 GameObject:
   m_ObjectHideFlags: 0
