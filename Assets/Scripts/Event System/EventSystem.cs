@@ -16,6 +16,7 @@ public enum EContentEventType
     StopBackgroundMusic,
     PlayBackgroundMusic,
     PauseButtonPressed,
+    SettingsUpdated,
 }
 
 public static class EventSystem

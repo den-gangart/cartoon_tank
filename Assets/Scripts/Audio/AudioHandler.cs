@@ -18,6 +18,11 @@ public class AudioHandler : Singleton<AudioHandler>
         _playingSoundsByNames = new Dictionary<string, List<AudioSourceHandler>>();
     }
 
+    private void Start()
+    {
+        _audioSettings.SynchronizeMixerGroups();
+    }
+
     public static AudioSourceHandler PlayGameSound(string soundName, GameObject sender)
     {
         AudioComponent audioComponent = Instance._audioComponentsByNames[soundName];

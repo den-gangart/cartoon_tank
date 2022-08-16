@@ -43,10 +43,10 @@ MonoBehaviour:
   _mixerGroupList:
   - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
     _parameterName: masterVolume
-    _volume: 0
-  - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
-    _parameterName: fxVolume
-    _volume: 0
+    _volume: 1
   - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
     _parameterName: musicVolume
-    _volume: 0
+    _volume: 1
+  - _audioMixer: {fileID: 24100000, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _parameterName: fxVolume
+    _volume: 1

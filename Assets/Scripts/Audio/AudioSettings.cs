@@ -11,7 +11,7 @@ public class AudioSettings : ScriptableObject
 
     public void SynchronizeMixerGroups()
     {
-        foreach(MixerGroupComponent _mixerComponent in _mixerGroupList)
+        foreach (MixerGroupComponent _mixerComponent in _mixerGroupList)
         {
             _mixerComponent.Synchronize();
         }
@@ -27,5 +27,18 @@ public class AudioSettings : ScriptableObject
         }
 
         return _audioDictionary;
+    }
+
+    public void UpdateMixerVolume(List<float> volumeAmount)
+    {
+        for (int i = 0; i < volumeAmount.Count && i < _mixerGroupList.Count; i++)
+        {
+            _mixerGroupList[i].UpdateVolume(volumeAmount[i]);
+        }
+    }
+
+    public float GetMixerParameterAmount(int index)
+    {
+        return _mixerGroupList[index].GetVolume();
     }
 }

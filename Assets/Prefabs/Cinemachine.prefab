@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 5917967541537183258}
   - component: {fileID: 2253569708593534487}
   - component: {fileID: 2810877668776984279}
+  - component: {fileID: 1969541406945317399}
   m_Layer: 0
   m_Name: CM FreeLook
   m_TagString: Untagged
@@ -783,6 +784,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 076b86f1fea59db459c101cf6f93d493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1969541406945317399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571493644211510397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f291d23d8451548a67d99d131ba4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4571493645249812300

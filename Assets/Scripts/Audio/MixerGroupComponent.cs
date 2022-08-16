@@ -6,7 +6,7 @@ public class MixerGroupComponent
 {
     [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private string _parameterName;
-    [SerializeField, Range(-80, 20)] private float _volume;
+    [SerializeField, Range(0.001f, 1)] private float _volume;
 
     public void UpdateVolume(float volume)
     {
@@ -16,6 +16,11 @@ public class MixerGroupComponent
 
     public void Synchronize()
     {
-        _audioMixer.SetFloat(_parameterName, _volume);
+        _audioMixer.SetFloat(_parameterName, Mathf.Log(_volume) * 20);
+    }
+
+    public float GetVolume()
+    {
+        return _volume;
     }
 }

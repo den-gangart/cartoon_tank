@@ -12,6 +12,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private float _timeScaleOnEnd = 0.1f;
     private int _taskCount => _levelTaskList.Count;
     private bool _isLevelOnPause = false;
+    private bool _isLevelFinished = false;
 
     public event Action<LevelTask> TaskAdded;
     public event Action<LevelTask> TaskCompleted;
@@ -67,6 +68,7 @@ public class LevelManager : Singleton<LevelManager>
         yield return new WaitForSeconds(_winDelay);
         Instance.LevelPassed?.Invoke();
         EventSystem.Broadcast(EContentEventType.StopBackgroundMusic);
+        _isLevelFinished = true;
     }
 
     private IEnumerator OnLevelFailed()
@@ -75,6 +77,7 @@ public class LevelManager : Singleton<LevelManager>
         yield return new WaitForSeconds(_loseDelay);
         Instance.LevelFailed?.Invoke();
         EventSystem.Broadcast(EContentEventType.StopBackgroundMusic);
+        _isLevelFinished = true;
     }
 
     private void OnButtonPausePressed()
@@ -85,7 +88,7 @@ public class LevelManager : Singleton<LevelManager>
             Time.timeScale = _regularTimeScale;
             _isLevelOnPause = false;
         }
-        else
+        else if(_isLevelFinished == false)
         {
             EventSystem.Broadcast(EContentEventType.GamePause);
             Time.timeScale = 0;

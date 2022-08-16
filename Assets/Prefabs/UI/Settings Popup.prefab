@@ -1853,6 +1853,7 @@ GameObject:
   - component: {fileID: 5402673235660047228}
   - component: {fileID: 5225768321510814525}
   - component: {fileID: 2363597675580633919}
+  - component: {fileID: 99095995899650881}
   m_Layer: 5
   m_Name: Settings Popup
   m_TagString: Untagged
@@ -1931,6 +1932,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &99095995899650881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402673235660047231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8993185f7e90d7445a967af1f0c52cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveButton: {fileID: 6135688857116353925}
+  _senivitySlider: {fileID: 5402673235473252132}
+  _sensivityDefaultValue: 1
+  _audioSliders:
+  - {fileID: 7632011505386835778}
+  - {fileID: 8929563572063607844}
+  - {fileID: 1199222472849737738}
+  _audioSettings: {fileID: 11400000, guid: e7a41a520d796284682347a0c9f8ac3c, type: 2}
 --- !u!1 &5402673235934318398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2098,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider With Text
       objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MaxValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MinValue
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2183,6 +2212,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+--- !u!114 &5402673235473252132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+  m_PrefabInstance: {fileID: 1979329489594237026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5402673235473252133 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
@@ -2199,6 +2239,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider With Text
       objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_Value
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MinValue
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2305,6 +2357,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+--- !u!114 &8929563572063607844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+  m_PrefabInstance: {fileID: 3053992243510797154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8929563572063607845 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
@@ -2321,6 +2384,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider With Text
       objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_Value
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MinValue
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2427,6 +2502,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+--- !u!114 &7632011505386835778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+  m_PrefabInstance: {fileID: 4064359055271538692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7632011505386835779 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
@@ -2443,6 +2529,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider With Text
       objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_Value
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+      propertyPath: m_MinValue
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2549,6 +2647,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+--- !u!114 &1199222472849737738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876593889575239494, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
+  m_PrefabInstance: {fileID: 4695466046851856204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1199222472849737739 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5876593889575239495, guid: 74672e8a258c1784395d5bd947fb5f74, type: 3}
