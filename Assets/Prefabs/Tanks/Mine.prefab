@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionVFX: {fileID: 100008, guid: 337943813ac55274db17d9c4dfcaf5ea, type: 3}
+  _explosionSound: Mine
 --- !u!135 &6078933512903972956
 SphereCollider:
   m_ObjectHideFlags: 0

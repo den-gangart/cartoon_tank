@@ -569,6 +569,7 @@ MonoBehaviour:
   _destroyFireFX: {fileID: 100002, guid: 002c8e66c11fe4048a8c3a08b7f0fe74, type: 3}
   _destroyExplosionFX: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
   _destroyMaterial: {fileID: 2100000, guid: fa62bebac0406fd4e90c896bd63a0bab, type: 2}
+  _explosionSound: Tank_Explosion
 --- !u!114 &52292054281859336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,6 +708,8 @@ MonoBehaviour:
   _shootFX: {fileID: 100008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
   _reoladTime: 1
   _animator: {fileID: 7247178640341569}
+  _shootSound: Explosion
+  _reoladSound: 
 --- !u!114 &926836932264276283
 MonoBehaviour:
   m_ObjectHideFlags: 0

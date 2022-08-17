@@ -20,7 +20,7 @@ MonoBehaviour:
     _loop: 0
     _pitch: 1
     _stereoPan: 1
-    _spatialBlend: 1
+    _spatialBlend: 0.895
     _reverbZoneMix: 0
   - _assetName: BGM_Menu
     _clip: {fileID: 8300000, guid: 3663a53664df44a4c82618f715d9bcfb, type: 3}
@@ -35,6 +35,96 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 5efcfa2490f00dc41b6c24633cae29b0, type: 3}
     _mixerGroup: {fileID: -2022673723191987861, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
     _volume: 0.5
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  - _assetName: Button
+    _clip: {fileID: 8300000, guid: 29b3ed95cc6972b44872790a7f74dfea, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  - _assetName: Win_Screen
+    _clip: {fileID: 8300000, guid: fd99c631f37b0284280df4430de65a4c, type: 3}
+    _mixerGroup: {fileID: -2022673723191987861, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 0.5
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  - _assetName: Loose_Screen
+    _clip: {fileID: 8300000, guid: b24b4568c84f6cb42a08bfbf5b7e613b, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 0.5
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  - _assetName: Reolad_Ready
+    _clip: {fileID: 8300000, guid: 759bef85e9bff124eb68a7d9f8d45494, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 1
+    _reverbZoneMix: 0
+  - _assetName: Mine
+    _clip: {fileID: 8300000, guid: 2fa31b076a2220d4d8f0578f34f73c03, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0.906
+    _reverbZoneMix: 0
+  - _assetName: Tank_Shoot
+    _clip: {fileID: 8300000, guid: 503de6e385879704e8d7c5136ebc71ed, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 1
+    _reverbZoneMix: 0
+  - _assetName: Tank_Explosion
+    _clip: {fileID: 8300000, guid: da508cf6487a6c948923434c1f14adca, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0.9
+    _reverbZoneMix: 0
+  - _assetName: Shoot_Hit
+    _clip: {fileID: 8300000, guid: c0994567fad9204409bb251c8f00b50d, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0.848
+    _reverbZoneMix: 0
+  - _assetName: Shoot_Reolad_Ready
+    _clip: {fileID: 8300000, guid: 759bef85e9bff124eb68a7d9f8d45494, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 1
+    _loop: 0
+    _pitch: 1
+    _stereoPan: 0
+    _spatialBlend: 0
+    _reverbZoneMix: 0
+  - _assetName: Task_Complete
+    _clip: {fileID: 8300000, guid: 971279188ffa63a42a52e955f2c4cb08, type: 3}
+    _mixerGroup: {fileID: -4272240965178420548, guid: 7f0d60aee8d281747a9e26917972780b, type: 2}
+    _volume: 0.507
     _loop: 0
     _pitch: 1
     _stereoPan: 0

@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private GameObject _vfxPoint;
     [SerializeField] private GameObject _regularExplosionVFX;
     [SerializeField] private GameObject _groundExplosionVFX;
+    [SerializeField] private string _explosionSound;
     private Rigidbody _rigidbody;
 
     private void Start()
@@ -29,6 +30,11 @@ public class Bullet : MonoBehaviour
         if(other.isTrigger)
         {
             return;
+        }
+
+        if(string.IsNullOrEmpty(_explosionSound) == false)
+        {
+            AudioHandler.PlayGameSound(_explosionSound, gameObject);
         }
 
         HitTarget(other.gameObject);

@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 51055738871322090, guid: 7c10c31acbca29f459d7eaab559ebf9a, type: 3}
+      propertyPath: _damageAmount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6299071353543684385, guid: 7c10c31acbca29f459d7eaab559ebf9a, type: 3}
       propertyPath: m_Name
-      value: Base Bullet
+      value: Enemy Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 6470566667446763459, guid: 7c10c31acbca29f459d7eaab559ebf9a, type: 3}
       propertyPath: m_Materials.Array.data[0]

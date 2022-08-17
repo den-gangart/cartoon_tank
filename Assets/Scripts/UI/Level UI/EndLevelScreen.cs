@@ -9,6 +9,8 @@ public class EndLevelScreen : MonoBehaviour
     [SerializeField] private GameObject _anchor;
     [SerializeField] private Button _backToMenuButton;
     [SerializeField] private Button _restartButton;
+    [SerializeField] private string _winSound;
+    [SerializeField] private string _loseSound;
 
     void Awake()
     {
@@ -24,11 +26,13 @@ public class EndLevelScreen : MonoBehaviour
     private void OnLevelPassed()
     {
         ShowEndLevelScreen(true);
+        AudioHandler.PlayGameSound(_winSound, gameObject);
     }
 
     private void OnLevelFailed()
     {
         ShowEndLevelScreen(false);
+        AudioHandler.PlayGameSound(_loseSound, gameObject);
     }
 
     private void ShowEndLevelScreen(bool isWin)

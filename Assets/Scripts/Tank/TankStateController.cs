@@ -17,6 +17,7 @@ public class TankStateController : MonoBehaviour
     [SerializeField] private GameObject _destroyFireFX;
     [SerializeField] private GameObject _destroyExplosionFX;
     [SerializeField] private Material _destroyMaterial;
+    [SerializeField] private string _explosionSound;
 
     public void UpdateState(ETankState newState)
     {
@@ -52,6 +53,11 @@ public class TankStateController : MonoBehaviour
 
     private void ApplyDestroyFX()
     {
+        if(string.IsNullOrEmpty(_explosionSound) == false)
+        {
+            AudioHandler.PlayGameSound(_explosionSound, gameObject);
+        }
+
         foreach(MeshRenderer tankComponent in _tankMeshComponents)
         {
             tankComponent.material = _destroyMaterial;

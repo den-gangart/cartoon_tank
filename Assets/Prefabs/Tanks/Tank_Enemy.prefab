@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9c679d4de6e4be7499d2728243832c13, type: 2}
     - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: _reoladTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: _bulletPrefab
@@ -281,7 +281,7 @@ MonoBehaviour:
   _lineSight: {fileID: 4632487533349906775}
   _tankMovement: {fileID: 1340863025806049134}
   _gunShooter: {fileID: 4495718475748413726}
-  _moveTime: 5
+  _moveTime: 6
   _reactionTime: 1
   _forgetTargetTime: 3
   _directionCount: 2

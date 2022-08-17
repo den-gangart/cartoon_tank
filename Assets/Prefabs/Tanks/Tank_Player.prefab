@@ -314,6 +314,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _reoladTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _shootSound
+      value: Tank_Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579506660670748946, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
+      propertyPath: _reoladSound
+      value: Reolad_Ready
+      objectReference: {fileID: 0}
     - target: {fileID: 6224531817163165255, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
       propertyPath: m_TagString
       value: Tank
