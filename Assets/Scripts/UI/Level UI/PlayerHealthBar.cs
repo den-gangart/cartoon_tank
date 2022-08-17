@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PlayerHealthBar : HealthBar
 {
     private float _baseValue = 1f;

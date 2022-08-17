@@ -6180,6 +6180,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1242680712}
+    - target: {fileID: 5885723830458096971, guid: 3c351cf61cd678049b258b6b3b281d2c, type: 3}
+      propertyPath: m_TagString
+      value: Tank
+      objectReference: {fileID: 0}
     - target: {fileID: 7276610895222636913, guid: 3c351cf61cd678049b258b6b3b281d2c, type: 3}
       propertyPath: m_Name
       value: Tank_Player

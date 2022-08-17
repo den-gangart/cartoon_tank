@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,14 +9,6 @@ public class PlayerController : MonoBehaviour
     private Quaternion _cameraRotation => _camera.transform.rotation;
 
     private bool _controlEnabled = true;
-
-    private void Start()
-    {
-        if (_tankMovement == null)
-        {
-            Debug.LogError(GameErrorMessages.MISSING_TANK_MOVEMENT);
-        }
-    }
 
     private void Update()
     {
